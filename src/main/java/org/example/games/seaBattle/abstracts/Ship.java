@@ -1,10 +1,11 @@
-package org.example.games.seaBattle.models;
+package org.example.games.seaBattle.abstracts;
 
 import org.example.games.seaBattle.enums.ShipStatus;
+import org.example.games.seaBattle.models.Cell;
 
 import java.util.List;
 
-public class Ship{
+public abstract class Ship{
 
     private List<Cell> coordinates;
     private ShipStatus shipStatus;

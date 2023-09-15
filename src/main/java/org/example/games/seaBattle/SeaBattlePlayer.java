@@ -2,40 +2,29 @@ package org.example.games.seaBattle;
 
 import org.example.games.Player;
 import org.example.games.seaBattle.models.Cell;
-import org.example.games.seaBattle.models.Ship;
+import org.example.games.seaBattle.abstracts.Ship;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class SeaBattlePlayer implements Player {
-
-    private String name;
+public class SeaBattlePlayer extends Player {
 
     private List<Ship> shipList;
 
     private List<Cell> shotList;
 
 
-    @Override
     public void move() {
 
     }
 
-    @Override
     public void init() {
         Scanner in = new Scanner(System.in);
         System.out.print("Print your name: ");
-        this.name = in.nextLine();
+        name = in.nextLine();
     }
 
     //Getters and Setters
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public List<Ship> getShipList() {
         return shipList;

@@ -15,7 +15,6 @@ public class SeaBattle implements Game {
     @Override
     public void start() {
         init();
-
     }
 
     @Override

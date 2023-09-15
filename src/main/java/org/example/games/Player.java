@@ -1,7 +1,10 @@
 package org.example.games;
 
-public interface Player {
-    void move();
-    void init();
-    String getName();
+public abstract class Player {
+    protected String name;
+    public abstract void move();
+    public abstract void init();
+    public String getName(){
+        return this.name;
+    }
 }

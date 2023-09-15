@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle init" />
+    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/models/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Ship.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,20 +41,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Theke/Desktop/java/tgTest",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="JAR Application.sea_battle-1.0-SNAPSHOT.jar">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="sea_battle" />
@@ -81,7 +88,8 @@
       <updated>1694544993115</updated>
       <workItem from="1694544994388" duration="1587000" />
       <workItem from="1694546615247" duration="1110000" />
-      <workItem from="1694548061469" duration="12209000" />
+      <workItem from="1694548061469" duration="12818000" />
+      <workItem from="1694604122203" duration="4290000" />
     </task>
     <task id="LOCAL-00001" summary="SeaBattle init">
       <created>1694569974601</created>
@@ -90,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694569974601</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="SeaBattle init">
+      <created>1694573382885</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694573382885</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
