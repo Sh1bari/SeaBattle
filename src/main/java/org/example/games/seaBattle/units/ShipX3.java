@@ -22,15 +22,15 @@ public class ShipX3 extends Ship {
         Board board1 = new Board(10);
         board1.setBoard(board);
         int i = 0;
-        while (i < hearts){
+        while (i < hearts) {
             Cell cell = scanCord();
-            if(!cell.equals(new Cell(0,0))) {
+            if (!cell.equals(new Cell(0, 0))) {
                 if (place(board1.getBoard(), cell)) {
                     board1.placeShipToBoard(this);
                     savedCells.add(cell);
                     i++;
                 }
-            }else {
+            } else {
                 board1.clear(savedCells);
                 savedCells = new ArrayList<>();
                 i = 0;

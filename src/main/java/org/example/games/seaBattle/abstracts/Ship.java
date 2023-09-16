@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-public abstract class Ship{
+public abstract class Ship {
 
     protected List<Cell> coordinates = new ArrayList<>();
     protected ShipStatus shipStatus = ShipStatus.ALIVE;
@@ -18,9 +18,9 @@ public abstract class Ship{
 
     //true - dead
     //false - hit or miss
-    public boolean hit(){
+    public boolean hit() {
         this.hearts--;
-        if(hearts == 0){
+        if (hearts == 0) {
             shipStatus = ShipStatus.DEAD;
             System.out.println("\t\t\t\t  Ship destroyed!");
             return true;
@@ -46,15 +46,16 @@ public abstract class Ship{
     }
 
     protected ShipDirection shipDirection;
-    protected Cell scanCord(){
+
+    protected Cell scanCord() {
         System.out.print("\t\t\t\t  Enter coordinates: ");
         String coordinate = in.nextLine();
-        if(coordinate.equals("delete")){
+        if (coordinate.equals("delete")) {
             System.out.println("\t\t\t\t  Deleted. Recreating...");
             coordinates = new ArrayList<>();
             shipDirection = null;
-            return new Cell(0,0);
-        }else {
+            return new Cell(0, 0);
+        } else {
             List<String> list = Stream.of(coordinate.split("")).filter(o -> !o.equals(" ")).toList();
             StringBuilder xString = new StringBuilder();
             int y = 0;
@@ -73,7 +74,8 @@ public abstract class Ship{
                         case "h", "H" -> y = H;
                         case "i", "I" -> y = I;
                         case "j", "J" -> y = J;
-                        default -> {}
+                        default -> {
+                        }
                     }
                     break;
                 }
@@ -81,7 +83,7 @@ public abstract class Ship{
             int x;
             try {
                 x = Integer.parseInt(xString.toString());
-            } catch (Exception e){
+            } catch (Exception e) {
                 x = 99;
             }
             if ((y == 0) || (xString.isEmpty()) || x > 10) {
@@ -92,20 +94,21 @@ public abstract class Ship{
             }
         }
     }
-    
-    private boolean isOwnCell(int x, int y){
-        for(Cell cell : coordinates){
-            if((cell.getXCord() == x) && (cell.getYCord() == y)){
+
+    private boolean isOwnCell(int x, int y) {
+        for (Cell cell : coordinates) {
+            if ((cell.getXCord() == x) && (cell.getYCord() == y)) {
                 return true;
             }
         }
         return false;
     }
+
     protected abstract void init(int[][] board);
 
     //true - can place
     //false - cant place
-    private boolean checkAround(Cell cell, int[][] board){
+    private boolean checkAround(Cell cell, int[][] board) {
         int x = cell.getXCord();
         int y = cell.getYCord();
         return ((board[x + 1][y - 1] != 1) || ((board[x + 1][y - 1] == 1) && isOwnCell(x + 1, y - 1))) &&
@@ -119,12 +122,12 @@ public abstract class Ship{
                 ((board[x - 1][y + 1] != 1) || ((board[x - 1][y + 1] == 1) && isOwnCell(x - 1, y + 1)));
     }
 
-    private boolean placeSecondPlace(int[][] board, Cell cell){
+    private boolean placeSecondPlace(int[][] board, Cell cell) {
         Cell placedCell = coordinates.get(0);
         int placedX = placedCell.getXCord();
         int placedY = placedCell.getYCord();
-        if(((cell.equals(new Cell(placedX, placedY - 1))) ||
-                (cell.equals(new Cell(placedX, placedY + 1)))) && checkAround(cell, board)){
+        if (((cell.equals(new Cell(placedX, placedY - 1))) ||
+                (cell.equals(new Cell(placedX, placedY + 1)))) && checkAround(cell, board)) {
             shipDirection = ShipDirection.Y;
             coordinates.add(cell);
             return true;
@@ -137,57 +140,59 @@ public abstract class Ship{
         System.out.println("\t\t\t\t  Can't place here!");
         return false;
     }
-    private List<Cell> getListOfPermittedCells(int[][] board){
+
+    private List<Cell> getListOfPermittedCells(int[][] board) {
         List<Cell> cellList = new ArrayList<>();
-        for(Cell cell : coordinates){
+        for (Cell cell : coordinates) {
             int x = cell.getXCord();
             int y = cell.getYCord();
-            if(shipDirection == ShipDirection.Y){
+            if (shipDirection == ShipDirection.Y) {
                 try {
-                    if(checkAround(new Cell(x, y + 1), board)){
+                    if (checkAround(new Cell(x, y + 1), board)) {
                         cellList.add(new Cell(x, y + 1));
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
                 try {
-                    if (checkAround(new Cell(x, y - 1), board)){
+                    if (checkAround(new Cell(x, y - 1), board)) {
                         cellList.add(new Cell(x, y - 1));
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
             } else if (shipDirection == ShipDirection.X) {
-                try{
-                    if (checkAround(new Cell(x - 1, y), board)){
+                try {
+                    if (checkAround(new Cell(x - 1, y), board)) {
                         cellList.add(new Cell(x - 1, y));
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
-                try{
-                    if (checkAround(new Cell(x + 1, y), board)){
+                try {
+                    if (checkAround(new Cell(x + 1, y), board)) {
                         cellList.add(new Cell(x + 1, y));
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
             }
         }
         return cellList;
     }
-    protected boolean place(int[][] board, Cell cell){
+
+    protected boolean place(int[][] board, Cell cell) {
         int x = cell.getXCord();
         int y = cell.getYCord();
-        if(board[x][y] == 0){
-            if((coordinates.size() == 0) && checkAround(cell, board)){
+        if (board[x][y] == 0) {
+            if ((coordinates.size() == 0) && checkAround(cell, board)) {
                 coordinates.add(cell);
                 return true;
-            }else if ((coordinates.size()) == 1){
+            } else if ((coordinates.size()) == 1) {
                 return placeSecondPlace(board, cell);
             } else {
-                for(Cell l : getListOfPermittedCells(board)){
-                    if(l.equals(cell)){
+                for (Cell l : getListOfPermittedCells(board)) {
+                    if (l.equals(cell)) {
                         coordinates.add(cell);
                         return true;
                     }

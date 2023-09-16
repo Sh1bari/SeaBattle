@@ -9,20 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle ships done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/enums/PaintBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/models/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/visual/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/visual/Painter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/visual/SeaBattlePainter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/visual/SeaBattlePainter.java" afterDir="false" />
     </list>
@@ -52,20 +52,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Theke/Desktop/java/tgTest&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Theke/Desktop/java/sea_battle",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -101,7 +101,8 @@
       <workItem from="1694546615247" duration="1110000" />
       <workItem from="1694548061469" duration="12818000" />
       <workItem from="1694604122203" duration="4290000" />
-      <workItem from="1694782901587" duration="48389000" />
+      <workItem from="1694782901587" duration="50239000" />
+      <workItem from="1694885106999" duration="2962000" />
     </task>
     <task id="LOCAL-00001" summary="SeaBattle init">
       <created>1694569974601</created>
@@ -124,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694804490225</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SeaBattle done">
+      <created>1694854413599</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694854413599</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,35 +152,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SeaBattle init" />
     <MESSAGE value="SeaBattle ships done" />
-    <option name="LAST_COMMIT_MESSAGE" value="SeaBattle ships done" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java</url>
-          <line>122</line>
-          <properties class="org.example.games.seaBattle.SeaBattlePlayer" method="addShip">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java</url>
-          <line>27</line>
-          <properties class="org.example.games.seaBattle.SeaBattlePlayer" method="getShot">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="SeaBattle done" />
+    <option name="LAST_COMMIT_MESSAGE" value="SeaBattle done" />
   </component>
 </project>

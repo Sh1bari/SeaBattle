@@ -25,14 +25,15 @@ public class SeaBattlePainter implements Painter {
     @Override
     public void fillBoard(int[][] board, PaintBoard paintBoard) {
         System.out.println("         A       B       C       D       E       F       G       H       I       J");
-        for(int i = 0; i < board.length; i++){
+        for (int i = 0; i < board.length; i++) {
             fillLine(board[i], i, paintBoard);
         }
     }
+
     @Override
-    public void countdown(int sec){
+    public void countdown(int sec) {
         clearConsole();
-        for(int i = sec; i > 0; i--){
+        for (int i = sec; i > 0; i--) {
             System.out.println();
             System.out.println();
             System.out.println();
@@ -46,7 +47,7 @@ public class SeaBattlePainter implements Painter {
         }
     }
 
-    public void fillGameArea(int[][] yourBoard, int[][] enemyBoard){
+    public void fillGameArea(int[][] yourBoard, int[][] enemyBoard) {
         System.out.println("\t\t\t\t\t  ENEMY BOARD");
         System.out.println();
         fillBoard(enemyBoard, PaintBoard.FOR_ENEMY);
@@ -55,7 +56,7 @@ public class SeaBattlePainter implements Painter {
         fillBoard(yourBoard, PaintBoard.FOR_ME);
     }
 
-    private void fillTopLine(int length){
+    private void fillTopLine(int length) {
         for (int i = 0; i < length + 1; i++) {
             if (i == 0) {
                 System.out.print("     ");
@@ -63,12 +64,13 @@ public class SeaBattlePainter implements Painter {
                 System.out.print("\u2554");
             } else if (i == length) {
                 System.out.print("\u2557\n");
-            } else if(i != length - 1){
+            } else if (i != length - 1) {
                 System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2566");
-            }else System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550");
+            } else System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550");
         }
     }
-    private void fillBottomLine(int length){
+
+    private void fillBottomLine(int length) {
         for (int i = 0; i < length + 1; i++) {
             if (i == 0) {
                 System.out.print("     ");
@@ -76,30 +78,31 @@ public class SeaBattlePainter implements Painter {
                 System.out.print("\u255A");
             } else if (i == length) {
                 System.out.print("\u255D\n");
-            } else if(i != length - 1) {
+            } else if (i != length - 1) {
                 System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2569");
-            }else System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550");
+            } else System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550");
         }
     }
 
-    private void fillIndex(int index){
+    private void fillIndex(int index) {
         if (index >= 10) {
             System.out.print("  " + index + " \u2551");
         } else System.out.print("  " + index + "  \u2551");
     }
 
-    private void fillBridges(int length){
+    private void fillBridges(int length) {
         for (int i = 0; i < length; i++) {
             if (i == 0) {
                 System.out.print("     \u2560");
             } else if (i == length - 1) {
                 System.out.print("\u2563\n");
-            } else if(i != length - 2){
+            } else if (i != length - 2) {
                 System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u256C");
             } else System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550");
         }
     }
-    private void fillCells(int[] line, int index, PaintBoard paintBoard){
+
+    private void fillCells(int[] line, int index, PaintBoard paintBoard) {
         for (int j = 0; j < 3; j++) {
             if (j == 1) {
                 fillIndex(index);
@@ -111,7 +114,7 @@ public class SeaBattlePainter implements Painter {
                         switch (line[i]) {
                             case 0, 3 -> System.out.print("       \u2551");
                             case 1 -> {
-                                if(paintBoard == PaintBoard.FOR_ME) {
+                                if (paintBoard == PaintBoard.FOR_ME) {
                                     System.out.print("\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551");
                                 } else System.out.print("       \u2551");
                             }
@@ -122,9 +125,9 @@ public class SeaBattlePainter implements Painter {
                         switch (line[i]) {
                             case 0 -> System.out.print("       \u2551");
                             case 1 -> {
-                                if(paintBoard == PaintBoard.FOR_ME) {
+                                if (paintBoard == PaintBoard.FOR_ME) {
                                     System.out.print("\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551");
-                                }  else System.out.print("       \u2551");
+                                } else System.out.print("       \u2551");
                             }
                             case 2 -> System.out.print("   \u221A   \u2551");
                             case 3 -> System.out.print("   \u20DD   \u2551");
@@ -143,7 +146,7 @@ public class SeaBattlePainter implements Painter {
             fillBottomLine(line.length);
         } else {
             fillCells(line, index, paintBoard);
-            if(index != line.length - 2) {
+            if (index != line.length - 2) {
                 fillBridges(line.length);
             }
         }

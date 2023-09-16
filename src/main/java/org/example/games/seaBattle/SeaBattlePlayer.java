@@ -2,9 +2,12 @@ package org.example.games.seaBattle;
 
 import org.example.games.Player;
 import org.example.games.seaBattle.abstracts.Board;
+import org.example.games.seaBattle.abstracts.Ship;
 import org.example.games.seaBattle.enums.PaintBoard;
 import org.example.games.seaBattle.models.Cell;
-import org.example.games.seaBattle.abstracts.Ship;
+import org.example.games.seaBattle.units.ShipX1;
+import org.example.games.seaBattle.units.ShipX2;
+import org.example.games.seaBattle.units.ShipX3;
 import org.example.games.seaBattle.units.ShipX4;
 import org.example.visual.Painter;
 import org.example.visual.SeaBattlePainter;
@@ -25,30 +28,30 @@ public class SeaBattlePlayer extends Player {
 
     }
 
-    public Cell getShot(){
+    public Cell getShot() {
         return shot(scanCellToShot());
     }
-    private Cell shot(Cell cell){
-        if(!hasShot(cell)){
+
+    private Cell shot(Cell cell) {
+        if (!hasShot(cell)) {
             shotList.add(cell);
             return cell;
-        }else {
-            System.out.println("\t\t\t\t  Can't shoot here!!");
-            shot(scanCellToShot());
+        } else {
+            System.out.println("\t\t\t\t  Can't shoot here!");
+            return shot(scanCellToShot());
         }
-        return new Cell(0,0);
     }
 
-    private boolean hasShot(Cell cell){
-        for(Cell c : shotList){
-            if(c.equals(cell)){
+    private boolean hasShot(Cell cell) {
+        for (Cell c : shotList) {
+            if (c.equals(cell)) {
                 return true;
             }
         }
         return false;
     }
 
-    private Cell scanCellToShot(){
+    private Cell scanCellToShot() {
         System.out.print("\t\t\t\t  Enter coordinates to shot: ");
         String coordinate = in.nextLine();
         List<String> list = Stream.of(coordinate.split("")).filter(o -> !o.equals(" ")).toList();
@@ -69,7 +72,8 @@ public class SeaBattlePlayer extends Player {
                     case "h", "H" -> y = H;
                     case "i", "I" -> y = I;
                     case "j", "J" -> y = J;
-                    default -> {}
+                    default -> {
+                    }
                 }
                 break;
             }
@@ -77,7 +81,7 @@ public class SeaBattlePlayer extends Player {
         int x;
         try {
             x = Integer.parseInt(xString.toString());
-        } catch (Exception e){
+        } catch (Exception e) {
             x = 99;
         }
         if ((y == 0) || (xString.isEmpty()) || x > 10) {
@@ -93,13 +97,17 @@ public class SeaBattlePlayer extends Player {
         System.out.print("\t\t\t\t  Print your name: ");
         name = in.nextLine();
     }
-    private Painter painter = new SeaBattlePainter();
 
-    public void placeShips(Board board){
+    private final Painter painter = new SeaBattlePainter();
+
+    public void placeShips(Board board) {
         painter.fillBoard(board.getBoard(), PaintBoard.FOR_ME);
 
-        //addShip(board, new ShipX1(board.getBoard()));
+        addShip(board, new ShipX1(board.getBoard()));
         addShip(board, new ShipX4(board.getBoard()));
+        addShip(board, new ShipX2(board.getBoard()));
+        addShip(board, new ShipX3(board.getBoard()));
+
         //addShip(board, new ShipX1(board.getBoard()));
         /*addShip(board, new ShipX1(board.getBoard()));
         addShip(board, new ShipX1(board.getBoard()));
@@ -120,7 +128,8 @@ public class SeaBattlePlayer extends Player {
         }
 
     }
-    private void addShip(Board board, Ship ship){
+
+    private void addShip(Board board, Ship ship) {
         board.placeShipToBoard(ship);
         shipList.add(ship);
         painter.clearConsole();
@@ -138,22 +147,23 @@ public class SeaBattlePlayer extends Player {
     }
 
 
-    public SeaBattlePlayer(){
+    public SeaBattlePlayer() {
         init();
     }
 
-    private Scanner in = new Scanner(System.in);
+    private final Scanner in = new Scanner(System.in);
 
-    private int A = 1;
-    private int B = 2;
-    private int C = 3;
-    private int D = 4;
-    private int E = 5;
-    private int F = 6;
-    private int G = 7;
-    private int H = 8;
-    private int I = 9;
-    private int J = 10;
+    private final int A = 1;
+    private final int B = 2;
+    private final int C = 3;
+    private final int D = 4;
+    private final int E = 5;
+    private final int F = 6;
+    private final int G = 7;
+    private final int H = 8;
+    private final int I = 9;
+    private final int J = 10;
+
     public List<Cell> getShotList() {
         return shotList;
     }

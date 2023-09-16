@@ -1,7 +1,6 @@
 package org.example.games.seaBattle;
 
 import org.example.games.Game;
-import org.example.games.Player;
 import org.example.games.seaBattle.abstracts.Board;
 import org.example.games.seaBattle.abstracts.Ship;
 import org.example.games.seaBattle.enums.ShipStatus;
@@ -9,17 +8,17 @@ import org.example.games.seaBattle.models.Cell;
 import org.example.visual.Painter;
 import org.example.visual.SeaBattlePainter;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SeaBattle implements Game {
 
     private final Painter painter = new SeaBattlePainter();
-    private List<SeaBattlePlayer> playerList = new ArrayList<>();
+    private final List<SeaBattlePlayer> playerList = new ArrayList<>();
 
-    private Board playerBoard1 = new Board(10);
-    private Board playerBoard2 = new Board(10);
+    private final Board playerBoard1 = new Board(10);
+    private final Board playerBoard2 = new Board(10);
+
     @Override
     public void start() {
         init();
@@ -27,18 +26,18 @@ public class SeaBattle implements Game {
         SeaBattlePlayer player2 = playerList.get(1);
         boolean win = false;
         painter.clearConsole();
-        System.out.println("\t\t\t\t  " + player1.getName() +  ", you move first! ");
+        System.out.println("\t\t\t\t  " + player1.getName() + ", you move first! ");
         sleep(3000);
-        while (!somebodyWin()){
-            while (player1Move(player1, player2)){
-                if(somebodyWin()){
+        while (!somebodyWin()) {
+            while (player1Move(player1, player2)) {
+                if (somebodyWin()) {
                     win = true;
                     break;
                 }
             }
-            if(win){
+            if (win) {
                 break;
-            }else{
+            } else {
                 painter.clearConsole();
                 System.out.println();
                 System.out.println();
@@ -47,15 +46,15 @@ public class SeaBattle implements Game {
                 sleep(1000);
                 painter.countdown(3);
             }
-            while (player2Move(player1, player2)){
-                if(somebodyWin()){
+            while (player2Move(player1, player2)) {
+                if (somebodyWin()) {
                     win = true;
                     break;
                 }
             }
-            if(win){
+            if (win) {
                 break;
-            }else{
+            } else {
                 painter.clearConsole();
                 System.out.println("\t\t\t\t  Change of sides!");
                 sleep(1000);
@@ -68,18 +67,18 @@ public class SeaBattle implements Game {
 
     //true - hit
     //false - missed
-    private boolean player1Move(SeaBattlePlayer player1, SeaBattlePlayer player2){
+    private boolean player1Move(SeaBattlePlayer player1, SeaBattlePlayer player2) {
         painter.clearConsole();
         painter.fillGameArea(playerBoard1.getBoard(), playerBoard2.getBoard());
         Cell shot = player1.getShot();
-        while (playerBoard2.getBoard()[shot.getXCord()][shot.getYCord()] > 2) {
+        while (playerBoard2.getBoard()[shot.getXCord()][shot.getYCord()] > 1) {
             System.out.println("\t\t\t\t  Can't shoot here!");
             shot = player1.getShot();
         }
-        for(Ship ship : player2.getShipList()){
-            for(Cell cell : ship.getCoordinates()){
-                if (cell.equals(shot)){
-                    if(ship.hit()){
+        for (Ship ship : player2.getShipList()) {
+            for (Cell cell : ship.getCoordinates()) {
+                if (cell.equals(shot)) {
+                    if (ship.hit()) {
                         playerBoard2.placeMissedZone(ship);
                     }
                     int[][] board = playerBoard2.getBoard();
@@ -99,18 +98,18 @@ public class SeaBattle implements Game {
         return false;
     }
 
-    private boolean player2Move(SeaBattlePlayer player1, SeaBattlePlayer player2){
+    private boolean player2Move(SeaBattlePlayer player1, SeaBattlePlayer player2) {
         painter.clearConsole();
         painter.fillGameArea(playerBoard2.getBoard(), playerBoard1.getBoard());
         Cell shot = player2.getShot();
-        while (playerBoard1.getBoard()[shot.getXCord()][shot.getYCord()] > 2) {
+        while (playerBoard1.getBoard()[shot.getXCord()][shot.getYCord()] > 1) {
             System.out.println("\t\t\t\t  Can't shoot here!");
             shot = player2.getShot();
         }
-        for(Ship ship : player1.getShipList()){
-            for(Cell cell : ship.getCoordinates()){
-                if (cell.equals(shot)){
-                    if(ship.hit()){
+        for (Ship ship : player1.getShipList()) {
+            for (Cell cell : ship.getCoordinates()) {
+                if (cell.equals(shot)) {
+                    if (ship.hit()) {
                         playerBoard1.placeMissedZone(ship);
                     }
                     int[][] board = playerBoard1.getBoard();
@@ -140,19 +139,20 @@ public class SeaBattle implements Game {
         System.out.println();
         System.out.println("\t\t\t\t\t  WIN!!!");
     }
-    private boolean somebodyWin(){
+
+    private boolean somebodyWin() {
         SeaBattlePlayer player1 = playerList.get(0);
         SeaBattlePlayer player2 = playerList.get(1);
         boolean dead1 = true;
         boolean dead2 = true;
 
-        for(Ship ship : player1.getShipList()){
-            if(ship.getShipStatus() == ShipStatus.ALIVE){
+        for (Ship ship : player1.getShipList()) {
+            if (ship.getShipStatus() == ShipStatus.ALIVE) {
                 dead1 = false;
                 break;
             }
         }
-        for(Ship ship : player2.getShipList()){
+        for (Ship ship : player2.getShipList()) {
             if (ship.getShipStatus() == ShipStatus.ALIVE) {
                 dead2 = false;
                 break;
@@ -167,7 +167,8 @@ public class SeaBattle implements Game {
         addPlayers();
         addShips();
     }
-    private void addShips(){
+
+    private void addShips() {
         System.out.println();
         System.out.println("\t\t\t\t" + playerList.get(0).getName() + ", it's your turn to place ships");
         sleep(2000);
@@ -182,15 +183,17 @@ public class SeaBattle implements Game {
         playerList.get(1).placeShips(playerBoard2);
         sleep(1000);
     }
-    private void showIntro(){
+
+    private void showIntro() {
         System.out.println("\t\t\t\t\t  Sea Battle");
         System.out.println("\t\t\t\t \u00A9 made by Vladimir Krasnov");
         sleep(2000);
         painter.clearConsole();
     }
-    private void addPlayers(){
-        for(int i = 1; i < 3; i++) {
-            System.out.println("\t\t\t\t     "+ i +" Player");
+
+    private void addPlayers() {
+        for (int i = 1; i < 3; i++) {
+            System.out.println("\t\t\t\t     " + i + " Player");
             SeaBattlePlayer player = new SeaBattlePlayer();
             playerList.add(player);
             System.out.println("\t\t\t\t  Hello, " + player.getName());
@@ -199,7 +202,7 @@ public class SeaBattle implements Game {
         }
     }
 
-    private void sleep(int millis){
+    private void sleep(int millis) {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
