@@ -163,7 +163,7 @@ public class SeaBattle implements Game {
 
     private void init() {
         painter.clearConsole();
-        //showIntro();
+        showIntro();
         addPlayers();
         addShips();
     }

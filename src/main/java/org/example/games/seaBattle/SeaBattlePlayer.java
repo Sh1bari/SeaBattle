@@ -104,12 +104,8 @@ public class SeaBattlePlayer extends Player {
         painter.fillBoard(board.getBoard(), PaintBoard.FOR_ME);
 
         addShip(board, new ShipX1(board.getBoard()));
-        addShip(board, new ShipX4(board.getBoard()));
-        addShip(board, new ShipX2(board.getBoard()));
-        addShip(board, new ShipX3(board.getBoard()));
-
-        //addShip(board, new ShipX1(board.getBoard()));
-        /*addShip(board, new ShipX1(board.getBoard()));
+        addShip(board, new ShipX1(board.getBoard()));
+        addShip(board, new ShipX1(board.getBoard()));
         addShip(board, new ShipX1(board.getBoard()));
 
         addShip(board, new ShipX2(board.getBoard()));
@@ -119,7 +115,8 @@ public class SeaBattlePlayer extends Player {
         addShip(board, new ShipX3(board.getBoard()));
         addShip(board, new ShipX3(board.getBoard()));
 
-        addShip(board, new ShipX4(board.getBoard()));*/
+        addShip(board, new ShipX4(board.getBoard()));
+
         System.out.println("\t\t\t\t  Final board");
         try {
             Thread.sleep(1000);

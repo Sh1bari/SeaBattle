@@ -9,22 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle done (reformatted code)">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/models/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/visual/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/visual/Painter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/visual/SeaBattlePainter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/visual/SeaBattlePainter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +90,7 @@
       <workItem from="1694548061469" duration="12818000" />
       <workItem from="1694604122203" duration="4290000" />
       <workItem from="1694782901587" duration="50239000" />
-      <workItem from="1694885106999" duration="2962000" />
+      <workItem from="1694885106999" duration="3858000" />
     </task>
     <task id="LOCAL-00001" summary="SeaBattle init">
       <created>1694569974601</created>
@@ -132,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694854413599</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="SeaBattle done (reformatted code)">
+      <created>1694904961761</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694904961761</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +148,7 @@
     <MESSAGE value="SeaBattle init" />
     <MESSAGE value="SeaBattle ships done" />
     <MESSAGE value="SeaBattle done" />
-    <option name="LAST_COMMIT_MESSAGE" value="SeaBattle done" />
+    <MESSAGE value="SeaBattle done (reformatted code)" />
+    <option name="LAST_COMMIT_MESSAGE" value="SeaBattle done (reformatted code)" />
   </component>
 </project>
