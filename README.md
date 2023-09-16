@@ -2,7 +2,7 @@
 - Font - Consolas
 - chcp 65001 (UTF-8)
 # Quick start
-[Download jar file](#how-to-download)
+[Download jar file.](#how-to-download)
 
 Open a terminal (`cmd.exe` on Windows).
 
