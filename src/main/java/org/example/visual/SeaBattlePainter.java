@@ -1,5 +1,7 @@
 package org.example.visual;
 
+import org.example.games.seaBattle.enums.PaintBoard;
+
 import java.io.IOException;
 
 public class SeaBattlePainter implements Painter {
@@ -21,12 +23,36 @@ public class SeaBattlePainter implements Painter {
      *              4 - side
      */
     @Override
-    public void fillBoard(int[][] board) {
-        clearConsole();
-        System.out.println("         A       B       C       D       E       F       G       H       I       G");
+    public void fillBoard(int[][] board, PaintBoard paintBoard) {
+        System.out.println("         A       B       C       D       E       F       G       H       I       J");
         for(int i = 0; i < board.length; i++){
-            fillLine(board[i], i);
+            fillLine(board[i], i, paintBoard);
         }
+    }
+    @Override
+    public void countdown(int sec){
+        clearConsole();
+        for(int i = sec; i > 0; i--){
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println("\t\t\t\t     " + i);
+            try {
+                Thread.sleep(1000);
+                clearConsole();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void fillGameArea(int[][] yourBoard, int[][] enemyBoard){
+        System.out.println("\t\t\t\t\t  ENEMY BOARD");
+        System.out.println();
+        fillBoard(enemyBoard, PaintBoard.FOR_ENEMY);
+        System.out.println();
+        System.out.println("\t\t\t\t\t  YOUR BOARD");
+        fillBoard(yourBoard, PaintBoard.FOR_ME);
     }
 
     private void fillTopLine(int length){
@@ -73,7 +99,7 @@ public class SeaBattlePainter implements Painter {
             } else System.out.print("\u2550\u2550\u2550\u2550\u2550\u2550\u2550");
         }
     }
-    private void fillCells(int[] line, int index){
+    private void fillCells(int[] line, int index, PaintBoard paintBoard){
         for (int j = 0; j < 3; j++) {
             if (j == 1) {
                 fillIndex(index);
@@ -84,14 +110,22 @@ public class SeaBattlePainter implements Painter {
                     case 0, 2 -> {
                         switch (line[i]) {
                             case 0, 3 -> System.out.print("       \u2551");
-                            case 1 -> System.out.print("\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551");
+                            case 1 -> {
+                                if(paintBoard == PaintBoard.FOR_ME) {
+                                    System.out.print("\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551");
+                                } else System.out.print("       \u2551");
+                            }
                             case 2 -> System.out.print("\u221A     \u221A\u2551");
                         }
                     }
                     case 1 -> {
                         switch (line[i]) {
                             case 0 -> System.out.print("       \u2551");
-                            case 1 -> System.out.print("\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551");
+                            case 1 -> {
+                                if(paintBoard == PaintBoard.FOR_ME) {
+                                    System.out.print("\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551");
+                                }  else System.out.print("       \u2551");
+                            }
                             case 2 -> System.out.print("   \u221A   \u2551");
                             case 3 -> System.out.print("   \u20DD   \u2551");
                         }
@@ -102,13 +136,13 @@ public class SeaBattlePainter implements Painter {
         }
     }
 
-    private void fillLine(int[] line, int index) {
+    private void fillLine(int[] line, int index, PaintBoard paintBoard) {
         if (index == 0) {
             fillTopLine(line.length);
         } else if (index == line.length - 1) {
             fillBottomLine(line.length);
         } else {
-            fillCells(line, index);
+            fillCells(line, index, paintBoard);
             if(index != line.length - 2) {
                 fillBridges(line.length);
             }

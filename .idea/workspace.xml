@@ -9,14 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle init">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/enums/ShipDirection.java" afterDir="false" />
+    <list default="true" id="e72236f3-d3b4-4474-88af-06951bcdea71" name="Changes" comment="SeaBattle ships done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/enums/PaintBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/units/ShipX4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/abstracts/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/models/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/visual/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/visual/Painter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/visual/SeaBattlePainter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/visual/SeaBattlePainter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +36,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -93,7 +101,7 @@
       <workItem from="1694546615247" duration="1110000" />
       <workItem from="1694548061469" duration="12818000" />
       <workItem from="1694604122203" duration="4290000" />
-      <workItem from="1694782901587" duration="15903000" />
+      <workItem from="1694782901587" duration="48389000" />
     </task>
     <task id="LOCAL-00001" summary="SeaBattle init">
       <created>1694569974601</created>
@@ -109,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694573382885</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SeaBattle ships done">
+      <created>1694804490225</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694804490225</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +143,36 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SeaBattle init" />
-    <option name="LAST_COMMIT_MESSAGE" value="SeaBattle init" />
+    <MESSAGE value="SeaBattle ships done" />
+    <option name="LAST_COMMIT_MESSAGE" value="SeaBattle ships done" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java</url>
+          <line>122</line>
+          <properties class="org.example.games.seaBattle.SeaBattlePlayer" method="addShip">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/games/seaBattle/SeaBattlePlayer.java</url>
+          <line>27</line>
+          <properties class="org.example.games.seaBattle.SeaBattlePlayer" method="getShot">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

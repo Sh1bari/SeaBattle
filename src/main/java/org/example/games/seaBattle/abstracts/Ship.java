@@ -6,13 +6,92 @@ import org.example.games.seaBattle.models.Cell;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Stream;
 
-public class Ship{
+public abstract class Ship{
 
     protected List<Cell> coordinates = new ArrayList<>();
-    protected ShipStatus shipStatus;
+    protected ShipStatus shipStatus = ShipStatus.ALIVE;
 
-    private ShipDirection shipDirection;
+    protected int hearts;
+
+    //true - dead
+    //false - hit or miss
+    public boolean hit(){
+        this.hearts--;
+        if(hearts == 0){
+            shipStatus = ShipStatus.DEAD;
+            System.out.println("\t\t\t\t  Ship destroyed!");
+            return true;
+        }
+        return false;
+    }
+
+    protected Scanner in = new Scanner(System.in);
+
+    protected int A = 1;
+    protected int B = 2;
+    protected int C = 3;
+    protected int D = 4;
+    protected int E = 5;
+    protected int F = 6;
+    protected int G = 7;
+    protected int H = 8;
+    protected int I = 9;
+    protected int J = 10;
+
+    public ShipDirection getShipDirection() {
+        return shipDirection;
+    }
+
+    protected ShipDirection shipDirection;
+    protected Cell scanCord(){
+        System.out.print("\t\t\t\t  Enter coordinates: ");
+        String coordinate = in.nextLine();
+        if(coordinate.equals("delete")){
+            System.out.println("\t\t\t\t  Deleted. Recreating...");
+            coordinates = new ArrayList<>();
+            shipDirection = null;
+            return new Cell(0,0);
+        }else {
+            List<String> list = Stream.of(coordinate.split("")).filter(o -> !o.equals(" ")).toList();
+            StringBuilder xString = new StringBuilder();
+            int y = 0;
+            for (String symbol : list) {
+                try {
+                    xString.append(Integer.parseInt(symbol));
+                } catch (Exception e) {
+                    switch (symbol) {
+                        case "a", "A" -> y = A;
+                        case "b", "B" -> y = B;
+                        case "c", "C" -> y = C;
+                        case "d", "D" -> y = D;
+                        case "e", "E" -> y = E;
+                        case "f", "F" -> y = F;
+                        case "g", "G" -> y = G;
+                        case "h", "H" -> y = H;
+                        case "i", "I" -> y = I;
+                        case "j", "J" -> y = J;
+                        default -> {}
+                    }
+                    break;
+                }
+            }
+            int x;
+            try {
+                x = Integer.parseInt(xString.toString());
+            } catch (Exception e){
+                x = 99;
+            }
+            if ((y == 0) || (xString.isEmpty()) || x > 10) {
+                System.out.println("\t\t\t\t  Wrong coordinates");
+                return scanCord();
+            } else {
+                return new Cell(x, y);
+            }
+        }
+    }
     
     private boolean isOwnCell(int x, int y){
         for(Cell cell : coordinates){
@@ -22,6 +101,7 @@ public class Ship{
         }
         return false;
     }
+    protected abstract void init(int[][] board);
 
     //true - can place
     //false - cant place
@@ -54,6 +134,7 @@ public class Ship{
             coordinates.add(cell);
             return true;
         }
+        System.out.println("\t\t\t\t  Can't place here!");
         return false;
     }
     private List<Cell> getListOfPermittedCells(int[][] board){
@@ -62,24 +143,40 @@ public class Ship{
             int x = cell.getXCord();
             int y = cell.getYCord();
             if(shipDirection == ShipDirection.Y){
-                if(checkAround(new Cell(x, y + 1), board)){
-                    cellList.add(new Cell(x, y + 1));
+                try {
+                    if(checkAround(new Cell(x, y + 1), board)){
+                        cellList.add(new Cell(x, y + 1));
+                    }
+                }catch (Exception e){
+
                 }
-                if (checkAround(new Cell(x, y - 1), board)){
-                    cellList.add(new Cell(x, y - 1));
+                try {
+                    if (checkAround(new Cell(x, y - 1), board)){
+                        cellList.add(new Cell(x, y - 1));
+                    }
+                }catch (Exception e){
+
                 }
             } else if (shipDirection == ShipDirection.X) {
-                if (checkAround(new Cell(x - 1, y), board)){
-                    cellList.add(new Cell(x - 1, y));
+                try{
+                    if (checkAround(new Cell(x - 1, y), board)){
+                        cellList.add(new Cell(x - 1, y));
+                    }
+                }catch (Exception e){
+
                 }
-                if (checkAround(new Cell(x + 1, y), board)){
-                    cellList.add(new Cell(x + 1, y));
+                try{
+                    if (checkAround(new Cell(x + 1, y), board)){
+                        cellList.add(new Cell(x + 1, y));
+                    }
+                }catch (Exception e){
+
                 }
             }
         }
         return cellList;
     }
-    public boolean canPlace(int[][] board, Cell cell){
+    protected boolean place(int[][] board, Cell cell){
         int x = cell.getXCord();
         int y = cell.getYCord();
         if(board[x][y] == 0){
@@ -97,6 +194,7 @@ public class Ship{
                 }
             }
         }
+        System.out.println("\t\t\t\t  Can't place here!");
         return false;
     }
 
