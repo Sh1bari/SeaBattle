@@ -12,4 +12,4 @@ Open a terminal (`cmd.exe` on Windows).
 ```
   
 ## How to download
-- asd
+- [Google drive](https://drive.google.com/drive/u/0/folders/1vhdjtnvXwCszmJFDVvfh07CZHH5MiLOw)
