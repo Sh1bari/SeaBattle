@@ -2,7 +2,7 @@
 - Font - Consolas
 - chcp 65001 (UTF-8)
 # Quick start
-[Download jar file](#how-to-download)
+[Download jar file.](#how-to-download)
 
 Open a terminal (`cmd.exe` on Windows).
 
@@ -12,4 +12,4 @@ Open a terminal (`cmd.exe` on Windows).
 ```
   
 ## How to download
-- asd
+- [Google drive](https://drive.google.com/drive/u/0/folders/1vhdjtnvXwCszmJFDVvfh07CZHH5MiLOw)
