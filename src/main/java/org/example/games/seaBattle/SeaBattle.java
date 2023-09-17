@@ -1,7 +1,6 @@
 package org.example.games.seaBattle;
 
 import org.example.games.Game;
-import org.example.games.seaBattle.abstracts.Board;
 import org.example.games.seaBattle.abstracts.Ship;
 import org.example.games.seaBattle.enums.ShipStatus;
 import org.example.games.seaBattle.models.Cell;

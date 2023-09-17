@@ -1,5 +1,6 @@
-package org.example.games.seaBattle.abstracts;
+package org.example.games.seaBattle;
 
+import org.example.games.seaBattle.abstracts.Ship;
 import org.example.games.seaBattle.models.Cell;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class Board {
     }
 
     public void placeShipToBoard(Ship ship) {
-        for (Cell cell : ship.coordinates) {
+        for (Cell cell : ship.getCoordinates()) {
             fillCell(cell);
         }
     }

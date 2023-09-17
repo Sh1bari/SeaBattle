@@ -1,6 +1,6 @@
 package org.example.games.seaBattle.units;
 
-import org.example.games.seaBattle.abstracts.Board;
+import org.example.games.seaBattle.Board;
 import org.example.games.seaBattle.abstracts.Ship;
 import org.example.games.seaBattle.models.Cell;
 
